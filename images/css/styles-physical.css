@@ -1,0 +1,185 @@
+@font-face { /* con esto podemos agregar una fuente personalizada*/
+    /*recibe algunas propiedades*/
+    font-family: charter; /*familia de fuentes, tenemos que poner el nombre de nuestra fuente*/
+    src: url('../fonts/charter-regular.otf'); /*Ubicaion de la fuente*/
+    font-style: normal; /*estilo de fuente normal o cursiva*/
+    font-weight: 400; /*Peso de la fuente, grosor de la fuente
+    como normal o bold*/
+}
+
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-italic.otf');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-bold.otf');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-bold-italic.otf'); /* */
+    font-style: italic;
+    font-weight: bold;
+}
+
+:root{
+    font-size: 18px;
+    --gray30: #212121; 
+    --gray20: #212429;
+    --gray: #424242;
+    --gray10: #616161;
+}
+
+body{
+    color: var(--gray30);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    /* font-family: "Open sasn";  Para tipos de letras que llevan espacio*/
+    /* font-family: charter; */
+    
+}
+
+a{
+    color: var(--gray30);
+}
+
+header{
+    font-size: 14px;
+    color: var(--gray10);
+}
+
+header a{
+    color: var(--gray10);
+    text-decoration: none;
+}
+/* :hover es una pseudoclase.
+el :hover aplicara un estilo cuando el usuario haga hover sobre el elemento
+especificado por el selector  */
+header a:hover{
+    color: var(--gray30);
+}
+/*Si yo uso un vw esto me ayuda a que un bloque por ejemplo 
+se encoja acorde a la ventan o pagina web*/
+
+nav details summary{
+    font-weight: bold;
+}
+
+h1{
+    font-size: 60px;
+    /* font-size: 3.75em; */
+    /* Margen de forma fisica */
+    /* Una opcion es agregando coordenada por coordenada */
+    margin-top: 64px;
+    margin-bottom: 16px;
+    /* margin-right: 10px;
+    margin-left: 20px; */
+    /* o bien usando */
+    /* margin: top right bottom left; */
+    /* margin: 64px 10px 16px 20px; */
+    /* si yo le quiero dar margenes arriba y abajo */
+    /* 34px indica top and bottom, 0px left and right */
+   /* margin: 34px 0;  */
+}
+
+h1 ~ p{
+    margin-bottom: 64px;
+}
+hr{
+    margin: 64px 0;
+}
+
+h2{
+    font-size: 2em;
+    margin: 64px 0 40px;
+    font-weight: normal;
+}
+
+h3{
+    font-size: 1.5em;
+    font-weight: normal;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+/* Los background tambien pueden se de imagenes. */
+
+
+pre{
+    background: #FEC62E;
+    ;
+}
+
+blockquote{
+    margin: 32px 0;
+}
+
+.hero{
+    /* Multiplica el patron para autocompletar el espacio */
+    /* linear-gradiente agrega un degrada a la imagen, puede ser
+    desde un color o con un rgba o rgn, aparte se le puede agregar
+    la posicion en la que queremos que este ese color */
+    background-image: linear-gradient(to top, rgba(255,255,255, .3),transparent), url('../images/pattern.png');
+    /* background-repeat: no-repeat; No se repite  */
+    /* Puede escoger como quiero que estee posisionado
+    asi como center, left, right, left top, right bottom */
+    /* background-position: center; */
+    /* Para expandir la imagen */
+    /* background-size: cover; */
+    height: 350px; 
+}
+
+/* Pseudo elementos */
+/* h1 ::before{
+    content: '-' ;
+ } */
+.section-content{
+    margin-top: 164px;
+}
+.section-content:first-of-type{
+    margin: 0;
+}
+ .section-content ol li{
+     line-height: 24px;
+ }
+ .section-content ul li{
+     margin-bottom: 16px;
+ }
+ .section-content + hr{
+     display: none;
+ }
+ .section-content img{
+     margin-top: 40px;
+    }   
+
+.section-content{
+   counter-reset: titteList;
+}
+     
+.section-content h3{
+    /* counter-increment, quiere decir que por cada h3 que se encuentre
+    va a aumentar 1 */
+    counter-increment: titleList;
+}
+
+ .section-content h3::before{
+    content: counter(titleList, decimal);
+    /* content: counter(titleList); me enumera de 1 a N*/
+    /* content: counter(titleList, upper-roman); yo puedo escoger te
+    que tipo quiero que me enumere */
+ }
+
+ .section-content h3::after{
+    content: '';
+    width: 27px;
+    height: 4px;
+    background: var(--gray30);
+    display: inline-block;
+ }
+
