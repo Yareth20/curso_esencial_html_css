@@ -35,6 +35,10 @@
     --gray: #424242;
     --gray10: #616161;
 }
+html {
+    scroll-behavior: smooth;
+}
+
 
 body{
     color: var(--gray30);
@@ -51,7 +55,23 @@ a{
 
 header{
     font-size: 14px;
+    width: 188px;
     color: var(--gray10);
+    position: absolute;
+    z-index: 1;
+    top: 64px;
+    left: -232px;
+    /* right: 0; */
+    /* top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 20px; */
+    /* bottom:200px; */
+    /* left:30px; */
+    /* right: 40px; */
+
+
 }
 
 header a{
@@ -69,6 +89,11 @@ se encoja acorde a la ventan o pagina web*/
 
 nav details summary{
     font-weight: bold;
+    line-height: 24px;
+}
+
+header li{
+    margin-bottom: 16px;
 }
 
 h1{
@@ -78,6 +103,7 @@ h1{
     /* Una opcion es agregando coordenada por coordenada */
     margin-top: 64px;
     margin-bottom: 16px;
+    font-weight: normal;
     /* margin-right: 10px;
     margin-left: 20px; */
     /* o bien usando */
@@ -86,6 +112,8 @@ h1{
     /* si yo le quiero dar margenes arriba y abajo */
     /* 34px indica top and bottom, 0px left and right */
    /* margin: 34px 0;  */
+   /* border: 1px solid red; */
+
 }
 
 h1 ~ p{
@@ -106,6 +134,11 @@ h3{
     font-weight: normal;
     margin-top: 16px;
     margin-bottom: 24px;
+    /* si pongo la posicion relative ya puedo navegar usando mi menu de
+    contenido */
+    position: sticky;
+    top: 0;
+    background: white;
 }
 
 /* Los background tambien pueden se de imagenes. */
@@ -113,12 +146,76 @@ h3{
 
 pre{
     background: #FEC62E;
-    ;
+    padding: 40px;
+    font-family: 'Roboto';
+    line-height: 24px;
 }
 
 blockquote{
+    font-size: 24px;
     margin: 32px 0;
+    padding-left: 16px;
+    line-height: 24px;
+    /* border: 4px solid red ; */
+    border-left: 4px solid var(--gray30);
+    /* border: 10px solid red;
+    border-top-color: pink; */
+    /* border-radius: 50px 35px 0 10px; */
+    /* border-top-left-radius: 50px; */
 }
+
+blockquote span{
+    color: var(--gray10);
+}
+
+blockquote span::before{
+    content: '-';
+}
+.header{
+    position: sticky;
+    top: 0px;
+}
+.header-content{
+    position: relative;
+}
+.main{
+    /* background: purple; */
+}
+.wrapper{   
+    width: 902px;
+    margin: auto;
+}
+.main-content{
+    background: white;
+}
+.title{
+    background: red;
+}
+.services{
+    background: yellow;
+}
+.pricing{
+    background: blue;
+}
+
+.debug{
+    /* border: 1px solid red !important; */
+    box-shadow: inset 0 0 0 1px red;
+    outline: 20px solid red;
+    background: red;
+    /* border: 20px solid green; */
+    /* box-shadow: 0 0 0 100px red; */
+    /* tambien se puede sombrar por dentro no solo por fuera */
+    /* box-shasow: inset 0 0 0 50px red; */
+    /* El boxshadow se utiliza como un borde,
+    yo puedo determinar su posicion de sombreado
+    y el  */
+    /* Diferencia con el borde
+    El borde modifica el modelo de caja, suma los pixeles del borde
+    Outline este no, esta fuera de la línea
+    es casí lo mismo que tener un box sizing*/
+}
+
 
 .hero{
     /* Multiplica el patron para autocompletar el espacio */
@@ -141,6 +238,9 @@ blockquote{
  } */
 .section-content{
     margin-top: 164px;
+    position: relative;
+    /* ya que puse la posicion relative en el section-content ya seré 
+    capaz de mover el header en las 4 coordenadas */
 }
 .section-content:first-of-type{
     margin: 0;
@@ -166,10 +266,11 @@ blockquote{
     /* counter-increment, quiere decir que por cada h3 que se encuentre
     va a aumentar 1 */
     counter-increment: titleList;
+    padding-bottom: 8px;
 }
 
  .section-content h3::before{
-    content: counter(titleList, decimal);
+    content: counter(titleList, decimal) '. ';
     /* content: counter(titleList); me enumera de 1 a N*/
     /* content: counter(titleList, upper-roman); yo puedo escoger te
     que tipo quiero que me enumere */
@@ -177,9 +278,12 @@ blockquote{
 
  .section-content h3::after{
     content: '';
-    width: 27px;
+    width: 80px;
     height: 4px;
     background: var(--gray30);
     display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
  }
 
