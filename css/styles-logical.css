@@ -1,0 +1,243 @@
+@font-face { /* con esto podemos agregar una fuente personalizada*/
+    /*recibe algunas propiedades*/
+    font-family: charter; /*familia de fuentes, tenemos que poner el nombre de nuestra fuente*/
+    src: url('../fonts/charter-regular.otf'); /*Ubicaion de la fuente*/
+    font-style: normal; /*estilo de fuente normal o cursiva*/
+    font-weight: 400; /*Peso de la fuente, grosor de la fuente
+    como normal o bold*/
+}
+
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-italic.otf');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-bold.otf');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: charter;
+    src: url('../fonts/charter-bold-italic.otf'); /* */
+    font-style: italic;
+    font-weight: bold;
+}
+
+:root{
+    font-size: 18px;
+    --white30: white; 
+    --white20: #A5A3A5;
+    --white10: #3A3539;
+    --white: #424242;
+}
+
+body{
+    color: var(--white30);
+    font-family: 'Nunito', sans-serif;
+    background: #251F24;
+    margin: 0;
+    /* En el mundo físico usabamos 4 coordenadas*/
+    /* margin: 10px 10 px 10px 10px; */
+    /* Arriba, derecha, abajo e izquierda*/
+    /* En el mundo LOGICO */
+    /* Existen dos propiedades diferentes */
+    /* margin-inline: ; */
+    /* margin-block: ; */
+    /* margin-block-start: 50px; Donde comienza el bloque (arriba)*/
+    /* margin-block-end: 50px; Donde termina el bloque (abajo)*/
+    /* El margin-inline lo podría decir que es en base con la direccion del contenido */
+    /* font-family: "Open sasn";  Para tipos de letras que llevan espacio*/
+    /* font-family: charter; */
+    
+}
+
+a{
+    color: var(--white30);
+}
+.header{
+    position: sticky;
+    inset-block-start: -45px ;
+}
+.header-content{
+    position: relative;
+    inset-block-start: 64px;
+}
+header{
+    font-size: 14px;
+    color: var(--white30);
+    position: absolute;
+    /* top */
+    inset-block-start: 0px;
+    /* bottom */
+    /* inset-block-end: ; */
+    /* left */
+    inset-inline-start: -208px;
+    /* rigth */
+    /* inset-inline-end: ; */
+    inline-size: 188px;
+}
+
+header li{
+    color: var(--white20);
+    margin-block-end: 16px;
+}
+
+header a{
+    color: var(--white20);
+    text-decoration: none;
+}
+/* :hover es una pseudoclase.
+el :hover aplicara un estilo cuando el usuario haga hover sobre el elemento
+especificado por el selector  */
+header a:hover{
+    color: var(--white30);
+}
+/*Si yo uso un vw esto me ayuda a que un bloque por ejemplo 
+se encoja acorde a la ventan o pagina web*/
+
+nav details summary{
+    font-weight: bold;
+}
+
+/* h1, h2, h3{
+    font-weight: normal;
+} */
+
+h1{
+    font-size: 60px;
+    margin-block-start: 64px;
+    margin-block-end: 16px;
+    /* POSITION DEL TEXTO */
+    /* text-align: center; */
+    /* text-align: start; right */
+    /* text-align: end; left */
+    /* font-size: 3.75em; */
+}
+
+h2{
+    font-size: 2em;
+    margin-block: 40px;
+}
+
+h3{
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-block: 16px;
+}
+
+hr{
+    margin-block: 40px;
+    border-color: rgba(97, 97, 97, 0.2);
+}
+
+
+/* Los background tambien pueden se de imagenes. */
+
+
+pre{
+    background: var(--white10);
+    padding: 40px;
+    overflow: auto;
+    border-radius: 8px;
+    /* border: 10px solid #5551FF;
+    box-shadow: -10px 10px 0 0 #ABAAF6;
+    border-start-start-radius: 60px;
+    border-start-end-radius: 40px; */
+}
+
+p{
+    color: var(--white20);
+}
+
+.hero{
+    background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
+    /* Multiplica el patron para autocompletar el espacio */
+    /* linear-gradiente agrega un degrada a la imagen, puede ser
+    desde un color o con un rgba o rgn, aparte se le puede agregar
+    la posicion en la que queremos que este ese color */
+    /* background-image: linear-gradient(to top, rgba(255,255,255, .3),transparent), url('../images/pattern.png'); */
+    /* background-repeat: no-repeat; No se repite  */
+    /* Puede escoger como quiero que estee posisionado
+    asi como center, left, right, left top, right bottom */
+    /* background-position: center; */
+    /* Para expandir la imagen */
+    /* background-size: cover; */
+    height: 350px; 
+}
+
+/* Pseudo elementos */
+/* h1 ::before{
+    content: '-' ;
+ } */
+.section-content img{
+    margin-block-start: 40px;
+    display: block;
+    max-inline-size: 100%;
+}
+
+.section-content{
+    counter-reset: titteList;
+}
+
+.section-content h3{
+    /* counter-increment, quiere decir que por cada h3 que se encuentre
+    va a aumentar 1 */
+    counter-increment: titleList;
+}
+
+ .section-content h3::before{
+    content: counter(titleList, decimal)'. ';
+    /* content: counter(titleList); me enumera de 1 a N*/
+    /* content: counter(titleList, upper-roman); yo puedo escoger te
+    que tipo quiero que me enumere */
+ }
+
+ /* .section-content h3::after{
+    content: '';
+    width: 27px;
+    height: 4px;
+    background: var(--white10);
+    display: inline-block;
+} */
+
+blockquote{
+    line-height: 32px;
+    font-size: 24px;
+    background: var(--white10);
+    margin-block-start: 80px; 
+    margin-block-end: 63px;
+    border-radius: 8px;
+    /* padding: 24px; */
+    padding-inline-end: 24px;
+    padding-inline-start: 24px;
+    padding-block-start: 24px;
+    padding-block-end: 24px;
+ }
+ blockquote p{
+     color: var(--white30);
+ }
+
+ .main hr {
+     display: none;
+ }
+
+ .main{
+     /* border: 1px solid red; */
+ }
+
+ .wrapper {
+     /* border: 1px solid blue; */
+     max-inline-size: 902px;
+     /* block-size: 100px; */
+     margin: auto;
+ }
+
+ .main-content{
+     padding-inline: 16px;
+     /* border: 1px solid green; */
+ }
