@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles-physical.css">
+    <link rel="stylesheet" href="./css/styles-logical.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <title>Blog de Yareth</title>
 </head>
 <body>
@@ -165,17 +165,17 @@
                     <h3 id="html">Qué es HTML</h3>
                     <p>Hyper Text Markup Language o Lenguaje de marcas Hipertexto. Es el componente más básico de la web. Define el significado y la estructura del contenido. <code>HTML</code> </p>
                     <pre>
-        &lt;!DOCTYPE html&gt;
-        &lt;html lang=&quot;en&quot;&gt;
-        &lt;head&gt;
-        &lt;meta charset=&quot;UFT-8&quot;&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-        &lt;title&gt;Document&lt;/title&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-        
-        &lt;/body&gt;
-        &lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UFT-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
                 
                     </pre>
                     <h3 id="etiquetas">Etiquetas</h3>
@@ -222,12 +222,47 @@
                         <li>padding-block | padding-inline | padding-block-start | padding-block-end | padding-inline-start | padding-inline-end</li>
                     </ul>
                 </section>
+                <div class="section-content">
+                    <h2>Hola estos son algunos videos muy lindos</h2>
+                    <div class="slider">
+                        <scroll-container class="slider-container">
+                            <scroll-page class="slider-slide" id="video-1">
+                                <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/5f5Ig_U2Bpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </scroll-page>
+                            <scroll-page class="slider-slide" id="video-2">
+                                <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/5f5Ig_U2Bpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </scroll-page>
+                            <scroll-page class="slider-slide" id="video-3">
+                                <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/uP_NGr3NhvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </scroll-page>
+                        </scroll-container>
+                        <div class="slider-bullet-list">
+                            <a href="#video-1" class="slider-bullet"></a>
+                            <a href="#video-2" class="slider-bullet"></a>
+                            <a href="#video-3" class="slider-bullet"></a>
+                        </div>
+                    </div>
+                </div>
             
                 <p>
                     Si tienes alguna pregunta escríbeme a 
                     <a href="mailto: me@leonidasesteban.com">me@leonidasesteban.com</a>
                 </p>
-            
+                <div class="section-content">
+                    <h2>Suscríbete a nuestro newsletter</h2>
+                    <form action="#" class="form">
+                        <!-- <select name="" id="">
+                            <option value="">curso 1</option>
+                            <option value="">curso 2</option>
+                        </select>
+                        <input type="checkbox">
+                        <input type="radio"> -->
+                        <input type="text" required placeholder="Nombre">
+                        <input type="email" required placeholder="Correo Electrónico">
+                        <input type="submit" value="Suscribirme">
+                    </form>
+                </div>
+
                 <a href="https://www.youtube.com/watch?v=D9G1VOjN_84" target="_blank">La canción mas chida que existe xdxd</a>
             </div>
         </div>
