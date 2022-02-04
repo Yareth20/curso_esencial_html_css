@@ -60,26 +60,29 @@ a{
     color: var(--white30);
 }
 .header{
-    position: sticky;
-    inset-block-start: -45px ;
+    /* SE quitaron estas propiedades en la clase 55, dado que ya lo hicimos en la parte inferior */
+    /* position: sticky;
+    inset-block-start: -45px ; */
 }
 .header-content{
-    position: relative;
-    inset-block-start: 64px;
+    padding-inline: 20px;
+    /* position: relative;
+    inset-block-start: 64px; */
 }
 header{
+    margin-block-start: 20px;
     font-size: 14px;
     color: var(--white30);
-    position: absolute;
+    /* position: absolute; */
     /* top */
-    inset-block-start: 0px;
+    /* inset-block-start: 0px; */
     /* bottom */
     /* inset-block-end: ; */
     /* left */
-    inset-inline-start: -208px;
+    /* inset-inline-start: -208px; */
     /* rigth */
     /* inset-inline-end: ; */
-    inline-size: 188px;
+    /* inline-size: 188px; */
 }
 
 header li{
@@ -109,8 +112,10 @@ nav details summary{
 } */
 
 h1{
-    font-size: 60px;
-    margin-block-start: 64px;
+    /* font-size: 60px; */
+    font-size: 40px;
+    /* margin-block-start: 64px; */
+    margin-block-start: 20px;
     margin-block-end: 16px;
     /* POSITION DEL TEXTO */
     /* text-align: center; */
@@ -167,7 +172,7 @@ p{
     /* background-position: center; */
     /* Para expandir la imagen */
     /* background-size: cover; */
-    height: 350px; 
+    block-size: 50px;
 }
 
 /* Pseudo elementos */
@@ -241,3 +246,88 @@ blockquote{
      padding-inline: 16px;
      /* border: 1px solid green; */
  }
+
+ .slider{
+     /* border: 1px solid red; */
+    }
+    .slider-container{
+        /* block-size: 100px; */
+        display: block;
+        overflow: auto;
+        scroll-behavior: smooth;
+        white-space: nowrap;
+        overflow-x: hidden;
+        font-size: 0;
+    /* border: 1px solid purple; */
+ }
+
+ .video{
+    margin: 0;
+    /* border: 1px solid blue; */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+ }
+
+ .slider-bullet-list{
+     text-align: center;
+     margin-block-start: 10px;
+ }
+
+ .slider-bullet{
+     display: inline-block;
+     inline-size: 15px;
+     block-size: 15px;
+     background: white;
+     border-radius: 50%;
+ }
+
+ .form input{
+     inline-size: 100%;
+     border: 1px solid var(--white30);
+     background: #251F24;
+     box-sizing: border-box;
+     border-radius: 8px;
+     padding-inline: 16px;
+     padding-block: 12px;
+     color: var(--white30);
+     font-size: 16px;
+     display: block;
+     margin-block-end: 24px;
+}
+
+.form input[type="submit"]{
+    background: #157EFB;
+    border: none;
+}
+
+.form input::-ms-input-placeholder{
+    color: var(--white20);
+}
+
+@media screen and (min-width: 1366px) {
+    .hero {
+        block-size: 350px;
+    }
+    .header{
+        position: sticky;
+        inset-block-start: -45px ;
+    }
+    .header-content{
+        position: relative;
+        inset-block-start: 64px;
+        padding: 0;
+    }
+    header{
+        position: absolute;
+        inset-block-start: 0px;
+        inset-inline-start: -208px;
+        inline-size: 188px;
+    }
+    h1{
+        font-size: 60px;
+        margin-block-start: 64px;
+
+    }
+}
